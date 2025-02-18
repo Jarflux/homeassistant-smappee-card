@@ -1,0 +1,78 @@
+type: picture-elements
+style: |
+  ha-card {
+    border-bottom: 0px;
+    padding:50px 20px 50px 20px;
+    background: linear-gradient(180deg, rgba(152,194,27,1) 10%, var(--card-background-color) 100%);
+  }
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 1; }
+    75% { opacity: 0.2; }
+    100% { opacity: 1; }
+  }
+elements:
+  - type: image
+    image: /local/img/smappee-logo-white.webp
+    style:
+      width: 50%
+      top: "-3%"
+      left: 20%
+  - type: icon
+    icon: mdi:square
+    style:
+      color: black
+      size: 100%
+      top: 42%
+      left: 43%
+      "--mdc-icon-size": 100px
+  - type: icon
+    icon: mdi:square
+    style:
+      animation: blink 3s linear infinite
+      color: rgba(0,140,209,255)
+      size: 100%
+      top: 42%
+      left: 43%
+      "--mdc-icon-size": 100px
+  - type: image
+    image: /local/img/ev-wall-status.png
+    style:
+      width: 100%
+      top: 50%
+      left: 50%
+  - type: icon
+    entity: binary_sensor.i4_edrive40_charging_status
+    icon: mdi:lightning-bolt
+    style:
+      animation: blink 2s linear infinite
+      top: 90%
+      left: 20%
+  - type: state-label
+    entity: binary_sensor.i4_edrive40_charging_status
+    style:
+      top: 100%
+      left: 20%
+  - type: icon
+    entity: sensor.i4_edrive40_remaining_battery_percent
+    icon: mdi:battery-high
+    style:
+      top: 90%
+      left: 50%
+  - type: state-label
+    entity: sensor.i4_edrive40_remaining_battery_percent
+    style:
+      top: 100%
+      left: 50%
+  - type: icon
+    entity: sensor.i4_edrive40_remaining_range_total
+    icon: mdi:map-marker-distance
+    style:
+      top: 90%
+      left: 80%
+  - type: state-label
+    entity: sensor.i4_edrive40_remaining_range_total
+    style:
+      top: 100%
+      left: 80%
+image: /local/img/ev-wall-status.png
